@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.chao.chao.BaseConfig;
 import com.chao.chao.Cpublic;
 
 public class Init {
@@ -37,6 +38,8 @@ public class Init {
         Cpublic.setTransparent(true);// 是否开启沉侵式状态栏(伪沉侵)
         Cpublic.setTruetransparent(true);// 是否开启沉侵式状态栏二(完全沉侵)
         Cpublic.setTitleColor("#FFC0CB");// 默认主题颜色
+
+        BaseConfig.setBaseTitle("base_activity", "content", "toolbar", "layout", "finish", "title", "other");
     }
 
     //这里初始化一个ListView无数据时候的背景，当ListView内部无数据时，会自动显示此背景，如果上面没有开启此功能，可以不用设置。
