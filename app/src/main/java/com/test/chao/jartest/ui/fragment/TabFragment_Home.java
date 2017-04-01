@@ -45,9 +45,10 @@ public class TabFragment_Home extends BaseFragment implements TabFragmentContrac
     }
 
     @Override
-    public void initTopBar(View layout, TextView left, TextView center, TextView right) {
+    public void initTopBar(View layout, TextView left, TextView title, View... other) {
 
     }
+
 
     @Override
     public void initView(View view) {

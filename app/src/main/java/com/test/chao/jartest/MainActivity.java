@@ -31,9 +31,10 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public void initTopBar(View layout, TextView finish, TextView center, TextView right) {
+    public void initTopBar(View layout, TextView finish, TextView title, View... other) {
         layout.setVisibility(View.GONE);
     }
+
 
     @Override
     public void initView() {
