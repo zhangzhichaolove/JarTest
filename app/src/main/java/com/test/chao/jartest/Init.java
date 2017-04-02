@@ -32,7 +32,7 @@ public class Init {
 
         Cpublic.setHttpCaChe(true);// 是否开启网络缓存
         Cpublic.setSilder(false);// 开启侧滑关闭
-        //Cpublic.setBackLayout(true);// 开启侧滑关闭
+        Cpublic.setBackLayout(true);// 开启侧滑关闭
         Cpublic.setSendException(false);// 是否开启异常捕捉
         Cpublic.setAppListener(true);// 是否开启App状态监听
         Cpublic.setBackgroudColor(true);// 开启换肤功能
@@ -40,7 +40,7 @@ public class Init {
         Cpublic.setTruetransparent(true);// 是否开启沉侵式状态栏二(完全沉侵)
         Cpublic.setTitleColor("#FFC0CB");// 默认主题颜色
 
-        BaseConfig.setBaseTitle("base_activity", "content", "toolbar", "layout", "finish", "title", "other");
+        BaseConfig.setBaseTitle("base_layout", "content", "toolbar", "layout", "finish", "title", "other");
     }
 
     //这里初始化一个ListView无数据时候的背景，当ListView内部无数据时，会自动显示此背景，如果上面没有开启此功能，可以不用设置。

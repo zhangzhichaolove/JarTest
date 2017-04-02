@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.base.utils.KeyDownUtils;
 import com.chao.anim.ILayoutAnimationController;
 import com.chao.base.BaseActivity;
+import com.test.chao.jartest.ui.activity.TestActivity;
 import com.test.chao.jartest.ui.fragment.TabFragment_Home;
 
 import org.xutils.view.annotation.ViewInject;
@@ -63,6 +64,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initListener() {
+        startIntent(TestActivity.class);
     }
 
     class MyAdapter extends FragmentPagerAdapter {
