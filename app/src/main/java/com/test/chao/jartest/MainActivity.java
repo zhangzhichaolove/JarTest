@@ -48,7 +48,7 @@ public class MainActivity extends BaseActivity {
 
         tabs.setupWithViewPager(viewpager);
         viewpager.setCurrentItem(0);
-        //viewpager.setOffscreenPageLimit(3);
+        viewpager.setOffscreenPageLimit(1);
         TabLayout.TabLayoutOnPageChangeListener listener =
                 new TabLayout.TabLayoutOnPageChangeListener(tabs);
         viewpager.addOnPageChangeListener(listener);
@@ -95,6 +95,6 @@ public class MainActivity extends BaseActivity {
      */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        return KeyDownUtils.BlackExit(this, keyCode, "再按一次退出程序!", 100);
+        return KeyDownUtils.BlackExit(this, keyCode, "再按一次退出程序!", 1500);
     }
 }
