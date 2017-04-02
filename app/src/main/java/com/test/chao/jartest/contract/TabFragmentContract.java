@@ -17,6 +17,8 @@ public interface TabFragmentContract {
 
         void showContent(List<JokeListBean> list);
 
+        void loadMoreContent(List<JokeListBean> list);
+
     }
 
     interface Presenter extends BasePresenter {

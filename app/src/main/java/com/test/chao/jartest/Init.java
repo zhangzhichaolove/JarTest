@@ -31,7 +31,8 @@ public class Init {
         Cpublic.setAdapterBackgroud(InitView(app));// 设置全局ListView无数据背景
 
         Cpublic.setHttpCaChe(true);// 是否开启网络缓存
-        Cpublic.setSilder(true);// 开启侧滑关闭
+        Cpublic.setSilder(false);// 开启侧滑关闭
+        //Cpublic.setBackLayout(true);// 开启侧滑关闭
         Cpublic.setSendException(false);// 是否开启异常捕捉
         Cpublic.setAppListener(true);// 是否开启App状态监听
         Cpublic.setBackgroudColor(true);// 开启换肤功能

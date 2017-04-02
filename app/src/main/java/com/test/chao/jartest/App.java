@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.chao.base.Chao;
 import com.chao.exception.ExceptionManagement;
+import com.test.chao.jartest.backlayout.BGASwipeBackManager;
 
 import org.xutils.x;
 
@@ -53,5 +54,6 @@ public class App extends Application {
 
         // 卸载代码
         ExceptionManagement.uninstall();
+        BGASwipeBackManager.getInstance().init(this);
     }
 }

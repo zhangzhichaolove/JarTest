@@ -63,7 +63,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initListener() {
-
     }
 
     class MyAdapter extends FragmentPagerAdapter {
