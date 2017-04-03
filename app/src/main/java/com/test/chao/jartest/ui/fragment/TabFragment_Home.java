@@ -27,9 +27,8 @@ import java.util.List;
  * Created by Chao on 2017/4/1.
  */
 
-public class TabFragment_Home extends BaseFragment implements TabFragmentContract.View, PullRefreshLayout.BGARefreshLayoutDelegate {
+public class TabFragment_Home extends BaseFragment<TabFragmentContract.Presenter> implements TabFragmentContract.View, PullRefreshLayout.BGARefreshLayoutDelegate {
 
-    TabFragmentContract.Presenter mPresenter;
     HomePageAdapter adapter;
     @ViewInject(R.id.recycler)
     RecyclerView recycler;
@@ -105,10 +104,6 @@ public class TabFragment_Home extends BaseFragment implements TabFragmentContrac
         // mRefreshLayout.beginLoadingMore();
     }
 
-    @Override
-    public void setPresenter(TabFragmentContract.Presenter presenter) {
-        mPresenter = presenter;
-    }
 
     @Override
     public void onBGARefreshLayoutBeginRefreshing(PullRefreshLayout refreshLayout) {

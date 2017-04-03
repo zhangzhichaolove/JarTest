@@ -1,6 +1,10 @@
 package com.test.chao.jartest.contract.impl;
 
+import android.support.annotation.NonNull;
+
 import com.base.utils.ToastUtils;
+import com.chao.mvp.BasePresenterImpl;
+import com.chao.mvp.BaseView;
 import com.chao.net.RxUtils;
 import com.chao.net.ServiceFactory;
 import com.test.chao.jartest.api.HttpResultSubscriber;
@@ -13,14 +17,13 @@ import com.test.chao.jartest.contract.TabFragmentContract;
  * Created by Chao on 2017/4/1.
  */
 
-public class TabFragmentPresenter implements TabFragmentContract.Presenter {
-    TabFragmentContract.View view;
+public class TabFragmentPresenter extends BasePresenterImpl<TabFragmentContract.View> implements TabFragmentContract.Presenter {
     private int page = 1;
 
-    public TabFragmentPresenter(TabFragmentContract.View view) {
-        this.view = view;
-        view.setPresenter(this);
+    public TabFragmentPresenter(@NonNull TabFragmentContract.View view) {
+        super(view);
     }
+
 
     @Override
     public void onRefresh() {
