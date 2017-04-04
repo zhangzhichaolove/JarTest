@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 
 import com.base.utils.ToastUtils;
 import com.chao.mvp.BasePresenterImpl;
-import com.chao.mvp.BaseView;
 import com.chao.net.RxUtils;
 import com.chao.net.ServiceFactory;
 import com.test.chao.jartest.api.HttpResultSubscriber;
