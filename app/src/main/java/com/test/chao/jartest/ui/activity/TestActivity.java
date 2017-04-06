@@ -1,9 +1,12 @@
 package com.test.chao.jartest.ui.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
+import com.base.utils.ToastUtils;
 import com.chao.base.BaseActivity;
+import com.chao.camera.CameraHelp;
 import com.test.chao.jartest.R;
 
 /**
@@ -28,13 +31,37 @@ public class TestActivity extends BaseActivity {
 
     }
 
-    @Override
-    public void initData() {
-
-    }
+//    @Override
+//    public void initData() {
+//
+//    }
 
     @Override
     public void initListener() {
 
+    }
+
+    @Override
+    public void initData() {
+        CameraHelp.Config config = CameraHelp.getInstance().getConfig();
+        config.isCrop = true;
+        config.openCamera = true;
+        config.openRadio = true;
+        config.openMultiselect = true;
+        CameraHelp.getInstance().setContext(this).setConfig(config).selectImage();
+        CameraHelp.getInstance().setImageSelect(new CameraHelp.ImageSelect() {
+            @Override
+            public void addImagePath(String... path) {
+                for (int i = 0; path != null && i < path.length; i++) {
+                    ToastUtils.showTagE(path[i]);
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int arg0, int arg1, Intent arg2) {
+        super.onActivityResult(arg0, arg1, arg2);
+        CameraHelp.getInstance().onActivityResult(arg0, arg1, arg2);
     }
 }
