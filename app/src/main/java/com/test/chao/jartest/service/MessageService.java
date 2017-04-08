@@ -74,6 +74,17 @@ public class MessageService extends Service {
         return mMessageBind;
     }
 
+    /**
+     * 在内存紧张的时候，系统回收内存时，会回调OnTrimMemory， 重写onTrimMemory当系统清理内存时从新启动Service
+     */
+    @Override
+    public void onTrimMemory(int level) {
+        /*
+         * 启动service
+         */
+
+    }
+
     private class MessageBind extends ProcessConnection.Stub {
 
         @Override
