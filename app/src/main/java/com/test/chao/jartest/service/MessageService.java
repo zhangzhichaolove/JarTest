@@ -1,5 +1,6 @@
 package com.test.chao.jartest.service;
 
+import android.app.Notification;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
@@ -55,14 +56,15 @@ public class MessageService extends Service {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            ToastUtils.showCToast("等待接收消息");
+            //ToastUtils.showCToast("等待接收消息");
         }
     };
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        MessageService.this.bindService(new Intent(MessageService.this, GuardService.class),
+        bindService(new Intent(MessageService.this, GuardService.class),
                 mServiceConnection, Context.BIND_IMPORTANT);
+        startForeground(0, new Notification());
         return Service.START_STICKY;
     }
 
@@ -94,9 +96,9 @@ public class MessageService extends Service {
             Toast.makeText(MessageService.this, "断开连接", Toast.LENGTH_LONG).show();
             Intent guardIntent = new Intent(MessageService.this, GuardService.class);
             // 发现断开我就从新启动和绑定
-            startService(guardIntent);
-            MessageService.this.bindService(guardIntent,
+            bindService(guardIntent,
                     mServiceConnection, Context.BIND_IMPORTANT);
+            startService(guardIntent);
         }
     }
 }

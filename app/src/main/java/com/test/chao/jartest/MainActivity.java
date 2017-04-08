@@ -1,6 +1,8 @@
 package com.test.chao.jartest;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +16,9 @@ import android.widget.TextView;
 import com.base.utils.KeyDownUtils;
 import com.chao.anim.ILayoutAnimationController;
 import com.chao.base.BaseActivity;
+import com.test.chao.jartest.service.GuardService;
+import com.test.chao.jartest.service.JobAwakenService;
+import com.test.chao.jartest.service.MessageService;
 import com.test.chao.jartest.ui.activity.TestActivity;
 import com.test.chao.jartest.ui.fragment.TabFragment_Home;
 
@@ -65,8 +70,11 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initListener() {
         startIntent(TestActivity.class);
-        //startService(new Intent(this, MessageService.class));
-        //startService(new Intent(this, JobAwakenService.class));
+        startService(new Intent(this, MessageService.class));
+        startService(new Intent(this, GuardService.class));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            startService(new Intent(this, JobAwakenService.class));
+        }
     }
 
     class MyAdapter extends FragmentPagerAdapter {

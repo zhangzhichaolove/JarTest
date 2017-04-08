@@ -23,7 +23,7 @@ public class JobAwakenService extends JobService {
         builder.setPeriodic(500);
         JobInfo jobInfo = builder.build();
         JobScheduler jobScheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
-        //jobScheduler.schedule(jobInfo);
+        jobScheduler.schedule(jobInfo);
         return START_STICKY;
     }
 
