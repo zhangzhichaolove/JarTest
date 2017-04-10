@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
-import com.base.utils.ToastUtils;
+import com.base.utils.LogUtils;
 import com.chao.base.BaseActivity;
 import com.chao.camera.CameraHelp;
 import com.test.chao.jartest.R;
@@ -53,7 +53,7 @@ public class TestActivity extends BaseActivity {
             @Override
             public void addImagePath(String... path) {
                 for (int i = 0; path != null && i < path.length; i++) {
-                    ToastUtils.showTagE(path[i]);
+                    LogUtils.showTagE(path[i]);
                 }
             }
         });
