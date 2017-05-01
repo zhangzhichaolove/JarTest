@@ -39,6 +39,9 @@
         <activity
             android:name="com.chao.camera.SelectMoreImageActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.CommentDetails"
+            android:screenOrientation="portrait" />
 
         <service
             android:name=".service.GuardService"

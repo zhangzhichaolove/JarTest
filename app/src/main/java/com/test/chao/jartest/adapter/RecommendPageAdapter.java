@@ -1,6 +1,7 @@
 package com.test.chao.jartest.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.chao.chao.Cpublic;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 import com.test.chao.jartest.R;
 import com.test.chao.jartest.bean.BuDeJieContentListModel;
+import com.test.chao.jartest.ui.activity.CommentDetails;
 import com.test.chao.jartest.utils.PopWindowUtil;
 import com.test.chao.jartest.view.CImageView;
 
@@ -56,11 +58,19 @@ public class RecommendPageAdapter extends BaseAdapter<BuDeJieContentListModel> {
         holder.view(R.id.tv_user_name).setText(item.getU().getName());
         holder.view(R.id.tv_user_time).setText(item.getPasstime());
         holder.view(R.id.tv_content).setText(item.getText());
-        holder.view(R.id.tv_forward).setText("顶" + item.getForward());
-        holder.view(R.id.tv_down).setText("踩" + item.getDown());
-        holder.view(R.id.tv_bookmark).setText("转" + item.getBookmark());
-        holder.view(R.id.tv_comment).setText("评" + item.getComment());
+        holder.view(R.id.tv_forward).setText("顶 " + item.getForward());
+        holder.view(R.id.tv_down).setText("踩 " + item.getDown());
+        holder.view(R.id.tv_bookmark).setText("转 " + item.getBookmark());
+        holder.view(R.id.tv_comment).setText("评 " + item.getComment());
         Glide.with(mContext).load(item.getU().getHeader().get(0)).centerCrop().placeholder(R.mipmap.load_error).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(iv_user_icon);
+        holder.view(R.id.ll_onclick).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, CommentDetails.class);
+                intent.putExtra("id", item.getId());
+                mContext.startActivity(intent);
+            }
+        });
         if (viewType == 0) {
 
         } else if (viewType == 1) {

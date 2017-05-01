@@ -1,6 +1,7 @@
 package com.test.chao.jartest.api;
 
 import com.test.chao.jartest.bean.BuDeJieContentModel;
+import com.test.chao.jartest.bean.CommentDetailsModel;
 
 import retrofit2.http.GET;
 import retrofit2.http.Url;
@@ -15,5 +16,8 @@ public interface BuDeJieApi {
 
     @GET
     Observable<BuDeJieContentModel> getBuDeJieData(@Url String url);
+
+    @GET
+    Observable<CommentDetailsModel> getBuDeJieComment(@Url String url);
 
 }

@@ -104,6 +104,9 @@ public class MainActivity extends BaseActivity {
      */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && StandardGSYVideoPlayer.backFromWindowFull(this)) {
+            return true;
+        }
         return KeyDownUtils.BlackExit(this, keyCode, "再按一次退出程序!", 1500);
     }
 
