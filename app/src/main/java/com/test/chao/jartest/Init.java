@@ -3,6 +3,7 @@ package com.test.chao.jartest;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.Color;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -24,9 +25,10 @@ public class Init {
 
         Cpublic.setDeBug(true);// 开启DeBug模式
         Cpublic.setPrintln(true);// 是否开启打印输出
-        Cpublic.setToastdefault(true);// 是否使用系统Toast
+        Cpublic.setToastdefault(false);// 是否使用系统Toast
         Cpublic.setToastInitTextColor(Color.WHITE);// 全局Toast文字颜色
-        Cpublic.setToastInitBackground(R.drawable.bg_rectangle_10dp);//全局Toast背景
+        Cpublic.setToastInitBackground(R.drawable.toast_defaults_bg);//全局Toast背景
+        Cpublic.setToastGravity(Gravity.NO_GRAVITY);//全局Toast背景
         Cpublic.setAdapterUpdate(true);// 开启全局ListView无数据背景
         Cpublic.setAdapterBackgroud(InitView(app));// 设置全局ListView无数据背景
 

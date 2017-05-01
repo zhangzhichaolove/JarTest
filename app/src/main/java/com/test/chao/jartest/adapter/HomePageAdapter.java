@@ -5,11 +5,11 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.chao.base.CLoadImage;
+import com.chao.base.LoadImage;
 import com.chao.base_adapter.AnimationEnum;
-import com.chao.base_adapter.CBaseAdapter;
+import com.chao.base_adapter.BaseAdapter;
 import com.chao.base_adapter.RLItemViewType;
-import com.chao.base_adapter.holder.CViewHolder;
+import com.chao.base_adapter.holder.ViewHolder;
 import com.test.chao.jartest.R;
 import com.test.chao.jartest.bean.JokeListBean;
 import com.test.chao.jartest.data.UserInfo;
@@ -23,7 +23,7 @@ import java.util.List;
  * Created by Chao on 2017/4/1.
  */
 
-public class HomePageAdapter extends CBaseAdapter<JokeListBean> {
+public class HomePageAdapter extends BaseAdapter<JokeListBean> {
 
 
     public HomePageAdapter(Context context, List<JokeListBean> mDatas, int layoutId) {
@@ -41,9 +41,9 @@ public class HomePageAdapter extends CBaseAdapter<JokeListBean> {
     }
 
     @Override
-    public void onBind(CViewHolder holder, int viewType, int position, JokeListBean item) {
+    public void onBind(ViewHolder holder, int viewType, int position, JokeListBean item) {
         holder.view(R.id.tv_home_page).setText(item.getContent()).setTextColor(ContextCompat.getColor(mContext, R.color.DeepPink)).setTextSize(16);
         holder.view(R.id.tv_send_time).setText(item.getUpdatetime());
-        x.image().bind((ImageView) holder.findViewById(R.id.iv_user_icon), UserInfo.userIcon[position % UserInfo.userIcon.length], CLoadImage.LoadCircularImage());
+        x.image().bind((ImageView) holder.findViewById(R.id.iv_user_icon), UserInfo.userIcon[position % UserInfo.userIcon.length], LoadImage.LoadCircularImage());
     }
 }
