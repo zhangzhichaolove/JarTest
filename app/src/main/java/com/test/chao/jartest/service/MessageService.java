@@ -14,8 +14,8 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.base.utils.LogUtils;
 import com.base.utils.ToastUtils;
+import com.chao.system.LogUtils;
 import com.test.chao.jartest.ProcessConnection;
 
 public class MessageService extends Service {

@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
-import com.base.utils.LogUtils;
 import com.chao.base.BaseActivity;
 import com.chao.camera.CameraHelp;
+import com.chao.system.LogUtils;
 import com.test.chao.jartest.R;
 
 /**

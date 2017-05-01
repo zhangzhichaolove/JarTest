@@ -1,8 +1,6 @@
 package com.test.chao.jartest.api;
 
-import android.util.Log;
-
-import com.base.utils.ToastUtils;
+import com.chao.system.LogUtils;
 import com.test.chao.jartest.bean.HttpResult;
 
 import retrofit2.adapter.rxjava.HttpException;
