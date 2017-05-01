@@ -2,7 +2,7 @@ package com.test.chao.jartest.api;
 
 import android.util.Log;
 
-import com.chao.system.LogUtils;
+import com.base.utils.ToastUtils;
 import com.test.chao.jartest.bean.HttpResult;
 
 import retrofit2.adapter.rxjava.HttpException;
@@ -28,13 +28,13 @@ public abstract class HttpResultSubscriber<T> extends Subscriber<HttpResult<T>> 
         //在这里做全局的错误处理
         if (e instanceof HttpException) {
             // ToastUtils.getInstance().showToast(e.getMessage());
-            Log.e("HttpResultSubscriber", "网络异常");
+            LogUtils.showTagE("HttpResultSubscriber", "网络异常");
         }
         if (e instanceof OnErrorNotImplementedException) {
-            Log.e("HttpResultSubscriber", "错误没有实现异常");
+            LogUtils.showTagE("HttpResultSubscriber", "错误没有实现异常");
         }
         if (e instanceof ClassCastException) {
-            Log.e("HttpResultSubscriber", "类转换异常");
+            LogUtils.showTagE("HttpResultSubscriber", "类转换异常");
         }
         _onError(e);
     }

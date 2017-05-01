@@ -10,7 +10,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
+
+import com.base.utils.LogUtils;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class JobAwakenService extends JobService {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         JobInfo.Builder builder = new JobInfo.Builder(1, new ComponentName(this, JobAwakenService.class));
-        builder.setPeriodic(500);
+        builder.setPeriodic(5000);
         JobInfo jobInfo = builder.build();
         JobScheduler jobScheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
         jobScheduler.schedule(jobInfo);
@@ -29,8 +30,6 @@ public class JobAwakenService extends JobService {
 
     @Override
     public boolean onStartJob(JobParameters params) {
-        Log.e("TAG", "onStartJob");
-
         // boolean isGuardAlive = isServiceWork(this,GuardService.class.getName());
         boolean isMessageAlive = isServiceWork(this, MessageService.class.getName());
 
@@ -38,12 +37,13 @@ public class JobAwakenService extends JobService {
             // startService(new Intent(this,GuardService.class));
             startService(new Intent(this, MessageService.class));
         }
-
+        LogUtils.showTagE("onStartJob");
         return false;
     }
 
     @Override
     public boolean onStopJob(JobParameters params) {
+        LogUtils.showTagE("onStopJob");
         return false;
     }
 
