@@ -37,9 +37,9 @@ public class Init {
         Cpublic.setBackLayout(true);// 开启侧滑关闭
         Cpublic.setSendException(false);// 是否开启异常捕捉
         Cpublic.setAppListener(true);// 是否开启App状态监听
-        Cpublic.setBackgroudColor(true);// 开启换肤功能
+        //Cpublic.setBackgroudColor(true);// 开启换肤功能
         Cpublic.setTransparent(true);// 是否开启沉侵式状态栏(伪沉侵)
-        Cpublic.setTruetransparent(true);// 是否开启沉侵式状态栏二(完全沉侵)
+        Cpublic.setTruetransparent(false);// 是否开启沉侵式状态栏二(完全沉侵)
         Cpublic.setTitleColor("#FFC0CB");// 默认主题颜色
 
         BaseConfig.setBaseTitle("base_layout", "content", "toolbar", "layout", "finish", "title", "other");
