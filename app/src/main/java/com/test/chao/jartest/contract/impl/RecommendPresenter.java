@@ -36,7 +36,7 @@ public class RecommendPresenter extends BasePresenterImpl<RecommendContract.View
 
     @Override
     public void start() {
-        ServiceFactory.getInstance().createService(BuDeJieApi.class).getBuDeJieData("http://s.budejie.com/topic/list/jingxuan/1/budejie-android-6.5.11/" + page + "-20.json")
+        ServiceFactory.getInstance().createService(BuDeJieApi.class).getBuDeJieData("http://s.budejie.com/topic/list/jingxuan/1/budejie-android-6.5.11/" + page + "-10.json")
                 .compose(RxUtils.<BuDeJieContentModel>defaultSchedulers()).subscribe(new Action1<BuDeJieContentModel>() {
             @Override
             public void call(BuDeJieContentModel contentModel) {
@@ -48,18 +48,5 @@ public class RecommendPresenter extends BasePresenterImpl<RecommendContract.View
                 page = contentModel.getInfo().getNp();
             }
         });
-//        RetrofitHelper.getJokeApi().getJokeList("8f3ad1265765e9f653df7d47ecfa68c8", 1, 20).subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(new HttpResultSubscriber<JokeListBean>() {
-//                    @Override
-//                    public void onSuccess(HttpResult.ResultBean<JokeListBean> t) {
-//                        view.showContent(t.getData());
-//                    }
-//
-//                    @Override
-//                    public void _onError(Throwable e) {
-//                        ToastUtils.showTagE(e);
-//                    }
-//                });
     }
 }
