@@ -85,7 +85,7 @@ public class MainActivity extends BaseActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return /*position == 0 ? TabFragment_Recommend.newInstance() :*/ TabFragment_Home.newInstance();
+            return position == 0 ? TabFragment_Recommend.newInstance() : TabFragment_Home.newInstance();
         }
 
         @Override
